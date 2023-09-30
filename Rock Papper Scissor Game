@@ -1,0 +1,139 @@
+package RockPapperScissors;
+import java.util.*;
+
+//------------------------------INTERN PE 2ND WEEK PROJECT --------------------------------
+public class Week2ndProject {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner (System.in);
+		
+		System.out.print("Enter your name : - ");
+		String name = sc.nextLine();
+		
+		System.out.println("0 is for Rock");
+		System.out.println("1 is for Papper");
+		System.out.println("2 is for Scissor");
+		
+		int computer_choice;
+		int computerwon=0;
+		int my_choice;
+		int me=0;
+		int game=1;
+		
+		//-------------------------LOOPS CONCEPT---------------------------------------------------
+		
+		while(game<=5)
+		{
+			Random rand = new Random();
+			computer_choice =rand.nextInt( 2 );
+			my_choice = sc.nextInt();
+			
+		//-----------------------------SWITCH CASE----------------------------------------------
+			
+			switch ( my_choice)
+			{
+			case 0:
+				System.out.println(" You choose Rock ");
+				break;
+			case 1:
+				System.out.println(" You choose Papper ");
+				break;
+				
+			case 2:
+				System.out.println(" You choose Scissor ");
+				
+			}
+			
+			switch ( computer_choice)
+			{
+			case 0:
+				System.out.println(" Computer choose Rock ");
+				break;
+			case 1:
+				System.out.println(" Computer choose Papper ");
+				break;
+				
+			case 2:
+				System.out.println(" Computer choose Scissor ");
+				
+			}
+			
+			//----------------------CONDITIONAL STATEMENT------------------------------------------------------
+			
+			if(computer_choice == my_choice)
+			{
+				System.out.println("Match tie");
+			}
+			//---------------------------------------------------------------------------
+			else if (computer_choice ==0 && my_choice==1)
+			{
+				System.out.println( name +" is Won !!! and Computer Lose");
+				me++;
+			}
+			//----------------------------------------------------------------------------
+			else if ( computer_choice ==0 && my_choice == 2) {
+				
+				System.out.println( "Computer Won !!!"+name+"is Lose");
+				computerwon++;
+			}
+			//----------------------------------------------------------------------------
+			
+			else if (computer_choice ==1 && my_choice==0)
+			{
+				System.out.println( "Computer Won !!!"+name+"is Lose");
+				computerwon++;
+			}
+			//----------------------------------------------------------------------------
+			
+			else if (computer_choice ==1 && my_choice==2)
+			{
+				System.out.println( name +" is Won !!! and Computer Lose");
+				me++;
+			}
+			//----------------------------------------------------------------------------
+			
+			else if (computer_choice ==2 && my_choice==0)
+			{
+				System.out.println( name +" is Won !!! and Computer Lose");
+				me++;
+			}
+			//----------------------------------------------------------------------------
+			
+			else if (computer_choice ==2 && my_choice==1)
+			{
+				System.out.println( "Computer Won !!!"+name+"is Lose");
+				computerwon++;
+			}
+			//----------------------------------------------------------------------------
+			
+			if(game==5)
+			{
+				break;
+			}
+			game++;
+			
+			
+	
+	}
+		System.out.println("---------------------------------------------------------------------");
+		
+		System.out.println("Computer"+" :"+computerwon);
+		System.out.println("me"+" :"+me);
+		
+		if (computerwon>me)
+		{
+			System.out.println("COMPUTER WON THE GAME ");
+		}
+		
+		else if (computerwon==me)
+		{
+			System.out.println(" MATCH TIE ");
+		}
+		
+		else 
+		{
+			System.out.println("COMPUTER WON THE GAME ");
+		}
+	}
+	
+}
